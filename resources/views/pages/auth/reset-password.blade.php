@@ -1,16 +1,17 @@
 <x-layouts::auth>
     <div class="flex flex-col gap-6">
-        <x-auth-header :title="__('Reset password')" :description="__('Please enter your new password below')" />
+        <x-auth-header :title="__('Reset password')" :description="__('Choose a fresh password to regain access to your account.')" />
 
-        <!-- Session Status -->
+        <div class="rounded-[24px] border border-white/80 bg-white/70 p-4 text-sm leading-6 text-slate-600 backdrop-blur">
+            Use a strong password that you have not used elsewhere.
+        </div>
+
         <x-auth-session-status class="text-center" :status="session('status')" />
 
         <form method="POST" action="{{ route('password.update') }}" class="flex flex-col gap-6">
             @csrf
-            <!-- Token -->
             <input type="hidden" name="token" value="{{ request()->route('token') }}">
 
-            <!-- Email Address -->
             <flux:input
                 name="email"
                 value="{{ request('email') }}"
@@ -20,7 +21,6 @@
                 autocomplete="email"
             />
 
-            <!-- Password -->
             <flux:input
                 name="password"
                 :label="__('Password')"
@@ -31,7 +31,6 @@
                 viewable
             />
 
-            <!-- Confirm Password -->
             <flux:input
                 name="password_confirmation"
                 :label="__('Confirm password')"

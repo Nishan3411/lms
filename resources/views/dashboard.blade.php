@@ -1,18 +1,21 @@
-<x-layouts::app :title="__('Dashboard')">
-    <div class="flex h-full w-full flex-1 flex-col gap-4 rounded-xl">
-        <div class="grid auto-rows-min gap-4 md:grid-cols-3">
-            <div class="relative aspect-video overflow-hidden rounded-xl border border-neutral-200 dark:border-neutral-700">
-                <x-placeholder-pattern class="absolute inset-0 size-full stroke-gray-900/20 dark:stroke-neutral-100/20" />
-            </div>
-            <div class="relative aspect-video overflow-hidden rounded-xl border border-neutral-200 dark:border-neutral-700">
-                <x-placeholder-pattern class="absolute inset-0 size-full stroke-gray-900/20 dark:stroke-neutral-100/20" />
-            </div>
-            <div class="relative aspect-video overflow-hidden rounded-xl border border-neutral-200 dark:border-neutral-700">
-                <x-placeholder-pattern class="absolute inset-0 size-full stroke-gray-900/20 dark:stroke-neutral-100/20" />
+<x-app-layout>
+    <x-slot name="header">
+        <div class="module-header">
+            <div>
+                <h2 class="module-title">{{ __('Dashboard') }}</h2>
+                <p class="module-copy">Your account is active and ready to use.</p>
             </div>
         </div>
-        <div class="relative h-full flex-1 overflow-hidden rounded-xl border border-neutral-200 dark:border-neutral-700">
-            <x-placeholder-pattern class="absolute inset-0 size-full stroke-gray-900/20 dark:stroke-neutral-100/20" />
+    </x-slot>
+
+    <div class="module-page">
+        <div class="module-shell max-w-4xl">
+            <div class="module-card">
+                <h3 class="text-lg font-semibold text-slate-900">{{ __("You're logged in!") }}</h3>
+                <p class="mt-2 text-sm leading-6 text-slate-600">
+                    Use the navigation to open your role-specific dashboard and continue working inside the LMS.
+                </p>
+            </div>
         </div>
     </div>
-</x-layouts::app>
+</x-app-layout>

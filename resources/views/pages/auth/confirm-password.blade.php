@@ -2,8 +2,12 @@
     <div class="flex flex-col gap-6">
         <x-auth-header
             :title="__('Confirm password')"
-            :description="__('This is a secure area of the application. Please confirm your password before continuing.')"
+            :description="__('Before continuing, please confirm your password for this secure action.')"
         />
+
+        <div class="rounded-[24px] border border-white/80 bg-white/70 p-4 text-sm leading-6 text-slate-600 backdrop-blur">
+            This extra check protects sensitive account settings and actions.
+        </div>
 
         <x-auth-session-status class="text-center" :status="session('status')" />
 
